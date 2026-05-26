@@ -89,3 +89,43 @@ const movies = [
 //   default:
 //     console.log(`${secondMovie.title}:status unknown`);
 // }
+console.log("---for loop---");
+for(let i=0; i<movies.length; i++){
+    console.log(i, movies[i].title,movies[i].year);
+}
+
+console.log("--for..of loop--");
+for (let movie of movies){
+    console.log(`${movie.title}(${movie.year})-(${movie.status})`);
+}
+
+console.log("---loop..ifelse---");
+for (let movie of movies){
+    let badgeClass="";
+    let badgeText="";
+
+    if(movie.status == "want"){
+        badgeClass ="badge-want";
+        badgeText ="want to watch";
+    } else if(movie.status === "watching"){
+        badgeClass = "badge-watching";
+        badgeText = "Watching";
+    }
+    else if(movie.status === "watched"){
+        badgeClass = "badge-watched";
+        badgeText = "Watched";
+    }
+    else {
+        badgeClass="badge-want";
+        badgeText="unknown";
+    }
+    console.log(`${movie.title} > class: ${badgeClass} text:${badgeText}`);
+}
+
+console.log("--while loop--");
+let position = 0;
+while (movies[position].title !== "Inception")
+{
+    console.log(movies[position].title);
+    position++;
+}
